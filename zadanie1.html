@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallBack</title>
+</head>
+<body>
+    <div id="wynik">
+        
+    </div>
+    <script>
+        function funkcjaA(){
+            setTimeout(()=>{
+                return document.getElementById("wynik").innerHTML += "<br>2: Lubi programować";
+            },1000);
+        }
+        function funkcjaB(callback){
+            document.getElementById("wynik").innerHTML +="<br>1: 2CTG";
+            callback();
+        }
+        const a = funkcjaA();
+        funkcjaB(a);
+    </script>
+</body>
+</html>
